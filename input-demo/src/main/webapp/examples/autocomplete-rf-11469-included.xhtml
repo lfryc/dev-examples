@@ -6,7 +6,7 @@
 
 <ui:composition>
 
-<input:autocomplete mode="ajax" id="autocomplete" autocompleteMethod="#{autoCompleteBean.autocomplete}" var="p" fetchValue="#{p.name}">
+<input:autocomplete mode="ajax" id="autocomplete" autocompleteMethod="#{bean.suggest}" var="p" fetchValue="#{p.name}">
     #{p.name}
 </input:autocomplete>
 
