@@ -24,10 +24,8 @@ package org.richfaces.demo.autocomplete;
 import java.io.Serializable;
 import java.util.Arrays;
 
-import javax.enterprise.context.RequestScoped;
-import javax.faces.component.UIComponent;
-import javax.faces.context.FacesContext;
-import javax.inject.Named;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 
 import org.richfaces.demo.Country;
 
@@ -35,12 +33,12 @@ import org.richfaces.demo.Country;
  * @author Nick Belaevski
  *
  */
-@Named
+@ManagedBean
 @RequestScoped
 public class AutoCompleteBean implements Serializable {
     private static final long serialVersionUID = 3072125097847582809L;
 
-    public Object suggest(FacesContext facesContext, UIComponent component, String prefix) {
+    public Object suggest(String prefix) {
         Country c = new Country();
         c.setName("Alabama");
         return Arrays.asList(c);
